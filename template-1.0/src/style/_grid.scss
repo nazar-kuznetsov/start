@@ -1,0 +1,84 @@
+$xs: "all and (max-width: 450px)";
+$sm: "all and (max-width: 578px)";
+$md: "all and (max-width: 768px)";
+$lg: "all and (max-width: 992px)";
+$xl: "all and (max-width: 1170px)";
+
+$cols: 12;
+$gutter: 15px;
+
+@mixin container() {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: $gutter;
+	padding-right: $gutter;
+}
+
+@mixin row($gutter: $gutter, $wrap: wrap) {
+	display: flex;
+	flex-wrap: $wrap;
+	margin-left: -$gutter;
+	margin-right: -$gutter;
+}
+
+@mixin size-flex() {
+	flex-grow: 1;
+}
+
+@mixin col($gutter: $gutter) {
+	margin-left: $gutter;
+	margin-right: $gutter;
+	margin-bottom: $gutter;
+}
+
+@mixin size($num, $gutter: $gutter) {
+	width: calc( 100% / #{$cols} * #{$num} - #{$gutter * 2 } );
+}
+
+@mixin size-xl($num, $gutter: $gutter) {
+	@media #{$xl} {
+		@include size($num, $gutter: $gutter);
+	}
+}
+
+@mixin size-lg($num, $gutter: $gutter) {
+	@media #{$lg} {
+    @include size($num, $gutter: $gutter);
+	}
+}
+
+@mixin size-md($num, $gutter: $gutter) {
+	@media #{$md} {
+		@include size($num, $gutter: $gutter);
+	}
+}
+
+@mixin size-sm($num, $gutter: $gutter) {
+	@media #{$sm} {
+    @include size($num, $gutter: $gutter);
+	}
+}
+
+@mixin size-xs($num, $gutter: $gutter) {
+	@media #{$xs} {
+    @include size($num, $gutter: $gutter);
+	}
+}
+
+@mixin justify-content($media, $position) {
+	@media #{$media} {
+		justify-content: $position;
+	}
+}
+
+@mixin flex-direction($media, $position) {
+	@media #{$media} {
+		flex-direction: $position;
+	}
+}
+
+@mixin align-items($media, $position) {
+	@media #{$media} {
+		align-items: $position;
+	}
+}

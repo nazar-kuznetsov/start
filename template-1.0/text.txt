@@ -1,0 +1,220 @@
+Выборка Элементов
+0. ('*') выбрать все
+1. div ~ p (найти p на одном уровнем вложености с div)
+2. div + p (найти p который будет сразу за div)
+3. div > p (найти p который будет прямым потомком div)
+4. a[href^=http] (найти все a у которых href будет начинасстья с http)
+5. a[href*="codeharmony"] (codeharmony может быть в люьой части атрибута hrref)
+
+1. между классами в html 2 пробела
+2. название главного блоко не должно быть на всю арархию 
+3. Img В логотипе можно не давать клас а сделать через каскад
+4. tr можно не давать класс и использывать каскад
+5. строчные элименты не обезятельно давать клас и можно использывать каскад
+6. прячим заголовок если нужна семантика
+7. Кнопки это всегда бэм блок тоесть просто button только через тэг <a></a>
+8. Blockquote внутрь него можно кладимать div
+9. номер теелфона это ссылка href="tel: 38067253038"
+10. контакты адрес можно указать в тэге <p></p>
+
+
+
+Название
+1. Intro (Вступление)
+2. descriptions (Описание)
+3. value (стоимость)
+4. field (Поле)
+5. advantages (преимущество)
+6. news (Новости)
+7. data(Дата) использывать тэг time
+8. Reviews(отзывы)
+9. Slider(Слайдер)
+10.Cite(Имя автора цитацы)
+11.Menu Profile(Вход выйти)
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+
+
+
+
+
+
+
+
+
+
+
+
+2. F1 = показать/скрыть боковую панель
+3. ALT + Q = Сортировать CssComb
+4. ALT + E = Выделить одинаковые слова
+5. ALT + ` = показать/сркрыть терминал
+6. CTRL + D = скопировать всью строчку и вставить снизу
+7. ALT + верх, или ALT + низ = переместить строчку верх или вниз
+8. CTRL + ALT + стрелки верх или вниз = Множественные курсоры
+9. SHIFT + ALT + A = Быстрый коминтарий
+
+git
+
+git close + ссылка с пример https://github.com/nazar-kuznetsov/nazar-kuznetsov.github.io.git клонировать репоззиторию в в туекщую папку
+
+
+
+1. F2 = Переиминовать символ
+2. CTRL + B = показать/скрыть боковую панель
+3. ALT + Q = Сортировать CssComb
+4. ALT + E = Выделить одинаковые слова
+5. ALT + ` = показать/сркрыть терминал
+6. CTRL + D = скопировать всью строчку и вставить снизу
+7. ALT + верх, или ALT + низ = переместить строчку верх или вниз
+8. CTRL + ALT + стрелки верх или вниз = Множественные курсоры
+9. SHIFT + ALT + A = Быстрый коминтарий
+
+
+
+npm 
+# Устанавливает все пакеты, перечисленные в package.json
+npm install
+Terminal
+
+cd site1 // Перейти в папку site1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Поместите параметры в этот файл, чтобы перезаписать параметры по умолчанию.
+{
+  "window.menuBarVisibility": "toggle",
+"workbench.activityBar.visible": true,
+  "workbench.sideBar.location": "left",
+  "editor.fontSize": 14,
+  "editor.lineHeight": 20,
+  "editor.scrollbar.verticalScrollbarSize": 9,
+  //"editor.fontFamily": "Inconsolata LGC",
+  //"editor.fontFamily": "Monaco",
+// "editor.fontFamily": "Source Code Pro Medium",
+  "editor.renderWhitespace": "none",
+  "workbench.statusBar.visible": true,
+  "terminal.integrated.cursorStyle": "block",
+  "[javascript]": {
+      
+  },
+   "files.exclude": {
+      "**/node_modules": true,
+      //".jshintrc": true,
+      
+      ".eslintrc.json": true,
+      ".vscode": true,
+      "package.json": true,
+      "package-lock.json": true,
+      "jsconfig.json": true,
+      ".vs": true,
+      ".csscomb.json": true
+  },
+  "search.exclude": {
+      "**/.git": true,
+      "**/node_modules": true,
+      "src/libs/*": true,
+      "build": true
+  },
+  "files.associations": {
+      "*.js": "javascript",
+      "*.scss": "scss"
+  },
+  
+  "workbench.colorCustomizations": {
+      "editor.background": "#1E1E1E",
+      "sideBar.background": "#1E1E1E",
+      //"contrastActiveBorder": "#475A7A",
+      //"list.activeSelectionBackground": "#004E9B",
+      //"editor.wordHighlightBackground": "#004E9B",
+      //"list.inactiveSelectionBackground": "#004E9B",
+      //"list.hoverBackground": "#5C2D91",
+      //"tab.activeBackground": "#120cc9",
+     // "editorWarning.foreground": "#2eff00",
+      "activityBar.background": "#1E1E1E",
+      //"editor.lineHighlightBackground":"#2e353f",
+      "terminal.background": "#1E1E1E",
+      //"focusBorder": "#5C2D91",
+      //"editor.lineHighlightBorder": "#bbb",
+      "statusBar.background": "#1E1E1E",
+      "panel.border": "#1E1E1E",
+      "panel.background": "#1E1E1E",
+      //"editor.selectionBackground": "#475A7A",
+      //"editor.selectionHighlightBackground": "#475A7A",
+     // "editor.findMatchBackground": "#475A7A"
+  },
+  
+  "editor.renderControlCharacters": false,
+  "scss.lint.important": "warning",
+  "scss.lint.idSelector": "warning",
+  "html.format.wrapLineLength": 80,
+  "terminal.integrated.fontSize": 13,
+  "grunt.autoDetect": "off",
+  "editor.tabSize": 2,
+  "git.enabled": true,
+  "terminal.integrated.cursorBlinking": true,
+  "editor.minimap.enabled": false,
+  "extensions.autoUpdate": false,
+  "editor.fontWeight": "100",
+  "update.channel": "none",
+  "css.validate": false,
+  "css.lint.vendorPrefix": "ignore",
+  "css.lint.duplicateProperties": "warning",
+  "css.lint.universalSelector": "warning",
+  "css.lint.zeroUnits": "warning",
+  "css.lint.propertyIgnoredDueToDisplay": "warning",
+  "css.lint.important": "warning",
+  "scss.lint.vendorPrefix": "ignore",
+  "scss.lint.duplicateProperties": "warning",
+  "terminal.integrated.enableBold": false,
+  "terminal.integrated.confirmOnExit": true,
+  "git.autorefresh": true,
+  "git.autofetch": true,
+  "editor.snippetSuggestions": "top",
+  "git.enableSmartCommit": true,
+  "terminal.integrated.lineHeight": 1,
+  //"editor.renderLineHighlight": "none",
+  "workbench.startupEditor": "none",
+  "scss.lint.universalSelector": "warning",
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "workbench.iconTheme": "simple-icons",
+"editor.renderLineHighlight": "line",
+  "editor.cursorStyle": "line-thin",
+  "editor.fontLigatures": true,
+  "explorer.autoReveal": false,
+  "editor.lineNumbers": "on",
+"editor.renderIndentGuides": false,
+"window.zoomLevel": 0,
+"editor.glyphMargin": false,
+"editor.folding": true
+}

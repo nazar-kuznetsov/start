@@ -1,0 +1,311 @@
+@mixin hover-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+}
+
+@mixin rgba($color, $opacity: .3) {
+  background: $color;
+  background: rgba($color, $opacity);
+}
+
+
+@mixin gradient() {
+  background: #7abcff;
+  background: -moz-radial-gradient(center, ellipse cover, #7abcff 0%, #1D729E 44%, #1D729E 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, #7abcff 0%,#1D729E 44%,#1D729E 100%);
+  background: radial-gradient(ellipse at center, #7abcff 0%,#1D729E 44%,#1D729E 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#1D729E',GradientType=1 );
+}
+
+
+// overlay
+@mixin overlay ($color: #000, $alpa: .5, $z-index: 100) {
+  position: fixed;
+  z-index: $z-index;
+  top: 0;
+  left: 0;
+
+  visibility: hidden;
+
+  width: 100%;
+  height: 100%;
+
+  transition: opacity .4s .3s, visibility .4s .4s;
+
+  opacity: 0;
+  background: rgba($color, $alpa);
+}
+
+@mixin overlay-active ($opacity: .15s) {
+  visibility: visible;
+  transition: opacity .15s linear;
+  opacity: 1;
+}
+
+
+// Modal
+@mixin modal ($time: .5s, $bg-color: #fff) {
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 0;
+  max-width: 600px;
+  width: 100%;
+  padding: 10px;
+  transition: $time ease;
+  transform: translate(-50%, -200%);
+  border-radius: 5px;
+  background-color: $bg-color;
+  opacity: 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+ /// box-shadow: 0 3px 0 rgba(0, 0, 0, .07);
+}
+
+@mixin modal-active () {
+  //transition-delay: .3s;
+  transform: translate(-50%, 25px);
+  opacity: 1;
+}
+
+@mixin close() {
+  position: absolute;
+	right: -10px;
+  top: -10px;
+
+  height: 15px;
+  width: 15px;
+  line-height: 15px;
+  font-size: 1rem;
+
+  background-color: #fff;
+  border: 3px solid #fff;
+  color: #acabab;
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  border-radius: 50%;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  &:hover {
+    color: #ff1493;
+  }
+}
+
+
+//placeholder
+
+@mixin placeholder() {
+  *::-webkit-input-placeholder {
+    opacity: 1;
+    color: grey;
+  }
+
+  *:-moz-placeholder {
+    opacity: 1;
+    color: grey;
+  }
+
+  *::-moz-placeholder {
+    opacity: 1;
+    color: grey;
+  }
+
+  *:-ms-input-placeholder {
+    opacity: 1;
+    color: grey;
+  }
+}
+
+
+
+@mixin accardion ($speed: .4s) {
+  overflow: hidden;
+
+  max-height: 0;
+
+  transition: max-height $speed ease-out;
+}
+
+
+@mixin accardion-width ($speed: .4s) {
+  overflow: hidden;
+
+  max-width: 0;
+
+  transition: max-width $speed ease-out;
+}
+
+
+
+
+@mixin vanilla-wrapper($height: 500px) {
+	overflow: hidden;
+	max-width: $height;
+}
+
+@mixin animate($transform-ms: 300ms, $height: 300ms) {
+	transition: transform $transform-ms ease, max-height $height ease;
+}
+
+@mixin vanilla-slider($margin-left: 0px, $margin-right: 0px) {
+	display: flex;
+	align-items: flex-start;
+	max-height: 0;
+	margin-left: $margin-left;
+	margin-right: $margin-right;
+	user-select: none;
+}
+
+@mixin vanilla-item($left: 0px, $right: 0px) {
+	position: relative;
+	min-width: 100%;
+
+	padding-left: $left;
+	padding-right: $right;
+	img {
+		max-width: 100%;
+		display: block;
+	}
+}
+
+
+
+
+@mixin vanilla-item__vertical($height: 420px) {
+	position: relative;
+	height: $height;
+		img {
+		max-width: 100%;
+		display: block;
+	}
+}
+
+
+
+
+@mixin vanilla-item__fade($ms: 0.3s) {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	transition: $ms ease;
+	opacity: 0;
+	&.active {
+		z-index: 1;
+		opacity: 1;
+	}
+	img {
+		display: block;
+		max-width: 100%;
+	}
+}
+
+
+@mixin button() {
+    display: inline-block;
+    border: none;
+    background-color: #EF5350;
+    font-weight: 400;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 12px 35px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    text-align: center;
+    position: relative;
+    outline: none;
+    transition: all .4s ease;
+    &:focus, &:hover {
+      text-decoration: none;
+      box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+      background-color: $orange;
+    }
+      &::after {
+        opacity: .22;
+      }
+    &:active {
+      background-color: $pink;
+    }
+      &::after {
+        opacity: .32;
+  }
+}
+
+/*==================================== Style Reset =================================================*/
+@mixin reset() {
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend, caption, article, aside, canvas, details, embed,
+  figure, figcaption, footer, header, hgroup,
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    box-sizing: inherit;
+  }
+
+  button {
+    outline: none;
+    cursor: pointer;
+  }
+
+  article, aside, details, figcaption, figure,
+  footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+
+  body {
+    line-height: 1;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+    content: '';
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+
+  html {
+    box-sizing: border-box;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

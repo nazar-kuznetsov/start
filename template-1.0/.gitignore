@@ -1,0 +1,7 @@
+node_modules/
+fonts/
+.vscode/
+.idea/
+build/
+gitfolder/
+src/libs/
